@@ -1,0 +1,41 @@
+{
+    "gameslist": [
+        {
+            "game": [
+            {
+                "title":{
+                    "title": "Hearthstone",
+                    "lang": "en"
+                         },
+                "price":"Free",
+                "platforms":{
+                  "platform":["PC", "ios"]
+                }
+            },
+            {
+                "title":{
+                    "title": "Minecraft",
+                    "lang": "en"
+                         },
+                "price":"19.99",
+                "platforms":{
+                    "platform":["PC", "xbox", "Playstation", "Android"]
+                  }
+            },
+            {
+                "title":{
+                    "title": "Skyrim",
+                    "lang": "en"
+                         },
+                "price":"29.99",
+                "platforms":{
+                    "platform":["PC", "xbox", "Playstation"]
+                  }
+            }
+
+            ]
+        }     
+    ]   
+}
+
+
