@@ -8,15 +8,36 @@
   </head>
   <body>
     <p id="demo"></p>
-    <button type="button" onclick="loadDoc()">Request bacon</button>
+    <input type="search" id="searchString" />
+    <button type="button" onclick="loadDoc()">Leia Raamat</button>
     <script>
+        function getTitles(bookDocks) {
+          let titlesArray = bookDocks.map(obj=>obj.title)
+          return titlesArray.map(item => `<h1>${item}</h1>`)
+        }
+        function getAuthors(bookDocks) {
+          	return bookDocks.map(obj => obj.author_name)
+        }
+        function getOutput(titles, authors) {
+          let result = []
+          for (let i = 0; i < titles.length; i++) {
+            const title = titles[i];
+            const author = authors[i]?.join(", ")
+            result.push(`<h1>${title}</h1><h5>${author}</h5>`)
+        }      
+        return result
+       }
         function loadDoc() {
+            const searchString = document.getElementById("searchString").value
             const xtthp = new XMLHttpRequest();
             xtthp.onload = function () {
                 console.log(this.responseText);
-                document.getElementById("demo").innerHTML = this.responseText;
+                const responseObject = JSON.parse(this.responseText);
+                const titles = getTitles(responseObject.docs)
+                const authors = getAuthors(responseObject.docs)
+                document.getElementById("demo").innerHTML = getOutput(titles, authors)
             };
-            xtthp.open("GET","https://baconipsum.com/api/?type=all-meat");
+            xtthp.open("GET",`http://openlibrary.org/search.json?q=${searchString}`);
             xtthp.send();
         }
     </script>
