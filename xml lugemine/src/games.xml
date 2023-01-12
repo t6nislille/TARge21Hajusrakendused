@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<gameslist>
+
+<game>
+    <title lang="en">Hearthstone</title>
+    <price>Free</price>
+</game>
+
+<game>
+    <title lang="en">Minecraft</title>
+    <price>19.99</price>
+</game>
+
+<game>
+    <title lang="en">Skyrim</title>
+    <price>29.99</price>
+</game>
+
+</gameslist>
